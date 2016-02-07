@@ -1,0 +1,25 @@
+{
+  "name": "hipersia/",
+  "description": "A PHP Framework",
+  "keywords": ["hipersia","php","framework"],
+  "homepage": "https://github.com/hipersia/",
+  "license": "",
+  "authors": [
+    {
+      "name": "Amir Hossein Babaeian",
+      "email": "amirh.babaeian@gmail.com",
+      "homepage": "https://github.com/amirhb",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "filp/whoops": "2.0.0-alpha2",
+    "vlucas/spot2": "~2.0",
+    "league/route": "1.2.3",
+    "twig/twig": "1.23.1",
+    "mustangostang/spyc": "0.5.1"
+  },
+  "autoload": {
+    "psr-4": {"hipersia\\": ""}
+  }
+}
