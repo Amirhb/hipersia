@@ -13,10 +13,10 @@
     }
   ],
   "require": {
-    "filp/whoops": "2.0.0-alpha2",
-    "vlucas/spot2": "~2.0",
+    "filp/whoops": "2.0.0",
+    "vlucas/spot2": "2.1.7",
     "league/route": "1.2.3",
-    "twig/twig": "1.23.1",
+    "twig/twig": "1.24.0",
     "mustangostang/spyc": "0.5.1"
   },
   "autoload": {
