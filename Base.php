@@ -24,7 +24,7 @@ class Base {
 
     public static function getDbLocator()
     {
-        $config = Spyc::YAMLLoad('../../config/config.yml');
+        $config = Spyc::YAMLLoad(__DIR__ . '../../config/config.yml');
 
         if (null === static::$db) {
             static::$db = new static($config['name'], $config['dsn']);
