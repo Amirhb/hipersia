@@ -17,6 +17,10 @@ class AssetBundle {
     private static function register($assetType, $assetName, $assetFile){
         $assets_path = realpath(__DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . self::$assetsFolder);
 
+        if (!file_exists($assets_path)) {
+            mkdir($assets_path, 0755, true);
+        }
+
         if(copy($assetFile, $assets_path . DIRECTORY_SEPARATOR . $assetName . '.' . $assetType)) {
             self::$assets[$assetType][] =  self::$assetsFolder . DIRECTORY_SEPARATOR . $assetName . '.' . $assetType;
         }
