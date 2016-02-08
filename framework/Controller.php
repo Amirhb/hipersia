@@ -34,7 +34,7 @@ abstract class Controller {
     }
 
     public function render( $view, $data = [], $responseCode = 200) {
-        $views_path = realpath(base::getBasePath() . DIRECTORY_SEPARATOR . self::$viewsFolder);
+        $views_path = realpath(base::getBasePath() . DIRECTORY_SEPARATOR . self::$viewsFolder . DIRECTORY_SEPARATOR);
         $loader = new \Twig_Loader_Filesystem( $views_path);
         $twig = new \Twig_Environment($loader, ['debug' => true]);
 
