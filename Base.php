@@ -24,7 +24,7 @@ class Base {
 
     public static function getBasePath()
     {
-        return realpath(__DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . '..');
+        return realpath(__DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..');
     }
 
     public static function getDbLocator()
