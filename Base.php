@@ -22,9 +22,14 @@ class Base {
         $this->db = $spot;
     }
 
+    public static function getBasePath()
+    {
+        return realpath(__DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . '..');
+    }
+
     public static function getDbLocator()
     {
-        $config = Spyc::YAMLLoad(__DIR__ . '../../config/config.yml');
+        $config = Spyc::YAMLLoad(self::getBasePath() . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.yml');
 
         if (null === static::$db) {
             static::$db = new static($config['name'], $config['dsn']);

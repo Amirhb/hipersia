@@ -8,10 +8,12 @@
 
 namespace hipersia\framework;
 
+use \hipersia\Base as base;
 use Symfony\Component\HttpFoundation\Response;
 
 abstract class Controller {
 
+    private static $viewsFolder = 'views';
     public $layout = "/layout/default";
 
     public function __construct() {
@@ -32,7 +34,7 @@ abstract class Controller {
     }
 
     public function render( $view, $data = [], $responseCode = 200) {
-        $views_path = realpath(__DIR__ . '/../views/');
+        $views_path = realpath(base::getBasePath() . DIRECTORY_SEPARATOR . self::$viewsFolder);
         $loader = new \Twig_Loader_Filesystem( $views_path);
         $twig = new \Twig_Environment($loader, ['debug' => true]);
 
