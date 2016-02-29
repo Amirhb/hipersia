@@ -20,11 +20,9 @@ abstract class Controller {
         // check csrf
         Sec::csrfCheck();
 
-        $this->beforeAction();
-    }
-
-    protected function beforeAction() {
-
+        if (method_exists($this, 'beforeAction')) {
+            $this->beforeAction();
+        }
     }
 
     public function __call($method, $args) {
