@@ -26,7 +26,7 @@ abstract class Controller {
     }
 
     public function __call($method, $args) {
-        echo "The called action does not exist! ";
+        echo "The called action does not exist!";
 
         return $args[1]; // Returning the Response Object.
     }
