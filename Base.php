@@ -9,19 +9,7 @@ namespace hipersia;
 
 class Base {
 
-    /** @var  $db Locator*/
     private static $db;
-
-    protected function __construct($name, $dsn)
-    {
-        $cfg = new \Spot\Config();
-
-        $cfg->addConnection($name, $dsn);
-
-        $spot = new \Spot\Locator($cfg);
-        $this->db = $spot;
-    }
-
     public static function getBasePath()
     {
         return realpath(__DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..');
@@ -29,12 +17,18 @@ class Base {
 
     public static function getDbLocator()
     {
-        $config = Spyc::YAMLLoad(self::getBasePath() . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.yml');
+        if (is_null(self::$db)) {
+            $config = \Spyc::YAMLLoad(self::getBasePath() . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.yml');
 
-        if (null === static::$db) {
-            static::$db = new static($config['name'], $config['dsn']);
+            $cfg = new \Spot\Config();
+
+            $cfg->addConnection($config['name'], $config['dsn']);
+
+            $spot = new \Spot\Locator($cfg);
+
+            self::$db = $spot;
         }
 
-        return static::$db;
+        return self::$db;
     }
 }
