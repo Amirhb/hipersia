@@ -16,8 +16,13 @@ class Sec {
 
         self::getCsrf();
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            if($_POST['hipersia_csrf'] != $_SESSION[ 'hipersia_csrf' ]) {
-                throw new \Exception("Csrf Error!");
+            if(isset($_POST['hipersia_csrf'])) {
+                if($_POST['hipersia_csrf'] != $_SESSION[ 'hipersia_csrf' ]) {
+                    throw new \Exception("Csrf Error!", 403);
+                }
+            }
+            else {
+                throw new \Exception("Csrf Error!", 403);
             }
         }
     }
