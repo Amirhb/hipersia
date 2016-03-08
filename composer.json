@@ -3,13 +3,19 @@
   "description": "A PHP Framework",
   "keywords": ["hipersia","php","framework"],
   "homepage": "https://github.com/amirhb/hipersia/",
-  "license": "",
+  "license": "BSD-3-Clause",
   "authors": [
     {
       "name": "Amir Hossein Babaeian",
       "email": "amirh.babaeian@gmail.com",
       "homepage": "https://github.com/amirhb",
-      "role": "Developer"
+      "role": "Founder and project lead"
+    },
+    {
+      "name": "Amir Mohsen Asaran",
+      "email": "admin@mihanmail.com",
+      "homepage": "https://github.com/amirasaran",
+      "role": "Core framework development"
     }
   ],
   "require": {
