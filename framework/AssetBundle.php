@@ -10,12 +10,14 @@ namespace hipersia\framework;
 
 use \hipersia\Base as base;
 
-class AssetBundle {
+class AssetBundle
+{
 
     private static $assetsFolder = 'assets';
     public static $assets = [];
 
-    private static function register($assetType, $assetName, $assetFile){
+    private static function register($assetType, $assetName, $assetFile)
+    {
         $assets_path = base::getBasePath() . DIRECTORY_SEPARATOR . self::$assetsFolder;
 
         if (!file_exists($assets_path)) {
@@ -27,11 +29,13 @@ class AssetBundle {
         }
     }
 
-    public static function registerJs($assetName, $assetFile) {
+    public static function registerJs($assetName, $assetFile)
+    {
         self::register($assetType='js', $assetName, $assetFile);
     }
 
-    public static function registerCss($assetName, $assetFile) {
+    public static function registerCss($assetName, $assetFile)
+    {
         self::register($assetType='css', $assetName, $assetFile);
     }
 

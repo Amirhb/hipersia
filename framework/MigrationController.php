@@ -11,7 +11,8 @@ use hipersia\Base as base;
 
 class MigrationController extends Controller
 {
-    protected function migrate($entityName) {
+    protected function migrate($entityName)
+    {
         $locator = base::getDbLocator();
         $mapper = $locator->mapper($entityName);
         $mapper->migrate();

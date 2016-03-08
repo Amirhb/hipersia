@@ -8,16 +8,18 @@
 
 namespace hipersia\framework;
 
-class Sec {
+class Sec
+{
 
     protected static $checked = false;
 
-    public static function csrfCheck() {
+    public static function csrfCheck()
+    {
 
         self::getCsrf();
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            if(isset($_POST['hipersia_csrf'])) {
-                if($_POST['hipersia_csrf'] != $_SESSION[ 'hipersia_csrf' ]) {
+            if (isset($_POST['hipersia_csrf'])) {
+                if ($_POST['hipersia_csrf'] != $_SESSION[ 'hipersia_csrf' ]) {
                     throw new \Exception("Csrf Error!", 403);
                 }
             }
@@ -27,9 +29,10 @@ class Sec {
         }
     }
 
-    public static function getCsrf() {
+    public static function getCsrf()
+    {
 
-        if(!isset($_SESSION[ 'hipersia_csrf' ])) {
+        if (!isset($_SESSION[ 'hipersia_csrf' ])) {
             $token = base64_encode( time() . self::randomString( 32 ) );
             $_SESSION[ 'hipersia_csrf' ] = $token;
         }

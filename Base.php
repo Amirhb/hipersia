@@ -7,9 +7,11 @@
  */
 namespace hipersia;
 
-class Base {
+class Base
+{
 
     private static $db;
+
     public static function getBasePath()
     {
         return realpath(__DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..');
