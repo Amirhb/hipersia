@@ -79,7 +79,7 @@ class DefaultController extends Controller {
 }
 ```
 ### Routing
-You can define new routes by editing routes.php which can be found in config folder in the project's root. It's based on php league [Route](http://route.thephpleague.com "Route") package.
+As you see in the sample [Shoutbox app](https://github.com/Amirhb/hipersia-sample-shoutbox "Shoutbox Web-App by Hipersia Micro-MVC PHP-Framework"), you can define new routes. It's based on php league [Route](http://route.thephpleague.com "Route") package. You have to call something like the following when your app starts.
 ```
 use Symfony\Component\HttpFoundation\Request;
 
