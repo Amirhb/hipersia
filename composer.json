@@ -1,6 +1,6 @@
 {
   "name": "amirhb/hipersia",
-  "description": "A PHP Framework",
+  "description": "A Micro-MVC PHP-Framework",
   "keywords": ["hipersia","php","framework"],
   "homepage": "https://github.com/amirhb/hipersia/",
   "license": "BSD-3-Clause",
