@@ -57,7 +57,6 @@ class MigrationController extends Migration {
     }
 }
 ```
-```
 ## Controllers
 Each controller inherits hipersia\framework\Controller and it uses Response and Request object of HttpFoundation.
 ```
